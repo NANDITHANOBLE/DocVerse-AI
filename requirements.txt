@@ -8,3 +8,6 @@ chromadb
 pypdf
 sentence-transformers
 python-dotenv
+langchain-text-splitters
+streamlit
+requests
