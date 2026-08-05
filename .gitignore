@@ -7,21 +7,44 @@ venv/
 # Data
 data/uploads/*
 data/chroma_db/*
+data/overviews/*
 !data/uploads/.gitkeep
 !data/chroma_db/.gitkeep
+!data/overviews/.gitkeep
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Testing & Coverage
+.coverage
+htmlcov/
+.tox/
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # IDE
-.vscode/settings.json
+.vscode/
+.idea/
+*.swp
+*.swo
 
-data/overviews/*
-!data/overviews/.gitkeep
+# Docker
+*.log
+
+# Jupyter (if you ever experiment with notebooks)
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
