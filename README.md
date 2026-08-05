@@ -4,29 +4,29 @@
 
 ### 📄 Upload Documents • 💬 Ask Questions • 🤖 Get AI-Powered Answers
 
-A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI**, **LangChain**, **ChromaDB**, **Groq LLM**, and **Streamlit**.
+A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI, LangChain, ChromaDB, Groq LLM, and Streamlit**.
 
-<br>
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&white
+![FastAPI](https://img.shieldsastAPI-009688?style=flat-square&logo=fastapi&logoColor=white
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&te
+![LangChain](https://img.shields.io/badgeG-orange?style=flat-square
+![ChromaDB](https://img.shields.io/badge/ChromaDBrple?style=flat-square
+![Tests](https://img.shields/Tests-24%2F24_Passing-success?style=flat-square
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat- 🌟 Intelligent Document Conversations with Source Citations
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-logo=python
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688the-badge&logo=fastapi
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4-the-badge&logo=streamlit
-
-![LangChain](https://img.shields.io/badgeG-orange?style=for-the-badge
-![ChromaDB](https://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Tests-24%2F24_Passing-success?style=for-the-bs://img.shields.io/badge/License-MIT-yellow?style=for-the-badge
-
-### 🌟 Intelligent Document Conversations with Source Citations
-
-[Featuress •
+#-features •
 #-architecture •
 #-tech-stack •
-[Gettingg-started •
-[API Endpoints](#-api-endpoints)
+#-getting-started •
+#-api-endpoints
 
-� Overview
+</div>
 
-**DocVerse AI** is a production-grade RAG application that allows users to upload PDF documents and interact with them through natural conversations.
+---
+
+## 📖 Overview
+
+**DocVerse AI** is a production-grade RAG application that allows users to upload PDF documents and interact with them through natural language conversations.
 
 Unlike traditional RAG systems that rely only on semantic search, DocVerse AI combines:
 
@@ -40,9 +40,9 @@ Unlike traditional RAG systems that rely only on semantic search, DocVerse AI co
 
 ✅ Session-Based Memory
 
-✅ Persistent Vector Storage
+✅ Persistent ChromaDB Storage
 
-This enables accurate responses even for complex questions such as:
+This enables accurate responses even for structural questions such as:
 
 - How many chapters are there?
 - List all sections in order.
@@ -60,9 +60,9 @@ This enables accurate responses even for complex questions such as:
 - File Validation
 - Corrupted PDF Detection
 - Duplicate Document Detection
+- SHA-256 Hash Verification
 - Automatic Chunking
 - Metadata Assignment
-- SHA-256 Hash Verification
 
 ### 🔍 Intelligent Retrieval
 
@@ -76,21 +76,21 @@ This enables accurate responses even for complex questions such as:
 ### 💬 AI Chat Experience
 
 - Conversational Question Answering
-- Source Citations
 - Follow-Up Question Support
+- Context-Aware Responses
+- Source Citations
 - Session Memory
-- Fast Response Generation
-- Context-Aware Retrieval
+- Fast Groq LLM Responses
 
 ### 🛠 Engineering Quality
 
-- FastAPI Backend
+- FastAPI REST APIs
 - Streamlit Frontend
 - Docker Support
 - Unit Testing
 - Error Handling
 - Modular Architecture
-- Production-Ready APIs
+- Production-Ready Design
 
 ---
 
@@ -121,14 +121,14 @@ This enables accurate responses even for complex questions such as:
             │ Chroma Vector Store  │
             └──────────┬───────────┘
                        │
-          ┌────────────┴────────────┐
-          ▼                         ▼
+         ┌─────────────┴─────────────┐
+         ▼                           ▼
 
-┌─────────────────┐      ┌─────────────────┐
-│ Semantic Search │      │ Keyword Search  │
-└────────┬────────┘      └────────┬────────┘
-         └──────────┬─────────────┘
-                    ▼
+ ┌─────────────────┐      ┌─────────────────┐
+ │ Semantic Search │      │ Keyword Search  │
+ └────────┬────────┘      └────────┬────────┘
+          └──────────┬─────────────┘
+                     ▼
 
           ┌─────────────────────┐
           │ Hybrid Retrieval    │
@@ -150,30 +150,30 @@ This enables accurate responses even for complex questions such as:
 
 ### Step 1: Semantic Search
 
-Uses embeddings and MMR retrieval to find contextually relevant chunks.
+Uses embeddings and MMR retrieval to identify contextually relevant chunks.
 
 ### Step 2: Keyword Search
 
-Searches for exact title and phrase matches.
+Performs exact title and phrase matching.
 
-### Step 3: Merge Results
+### Step 3: Result Merging
 
-Combines and removes duplicate chunks.
+Combines semantic and keyword results while removing duplicates.
 
 ### Step 4: Structural Query Detection
 
-Questions such as:
+Questions like:
 
 - List all chapters
-- How many sections
-- What's the last topic
+- How many sections are there?
+- What is the last topic?
 - Rank all stories
 
-will automatically include the generated document overview.
+automatically include the generated document overview.
 
-### Step 5: Generate Final Answer
+### Step 5: Response Generation
 
-Groq LLM receives the retrieved context and produces an answer with citations.
+Groq LLM generates an answer using retrieved context and provides citations.
 
 </details>
 
@@ -236,20 +236,20 @@ DocVerse-AI
 - Python 3.10+
 - Groq API Key
 
-Get a free key:
+Get a free API key:
 
 https://console.groq.com
 
 ---
 
-### 1️⃣ Clone Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/NANDITHANOBLE/DocVerse-AI.git
 cd DocVerse-AI
 ```
 
-### 2️⃣ Create Virtual Environment
+### 2️⃣ Create a Virtual Environment
 
 #### Windows
 
@@ -289,13 +289,13 @@ GROQ_API_KEY=your_groq_api_key
 uvicorn app.main:app --reload
 ```
 
-Backend:
+Backend URL:
 
 ```text
 http://localhost:8000
 ```
 
-Swagger Docs:
+Swagger Documentation:
 
 ```text
 http://localhost:8000/docs
@@ -309,7 +309,7 @@ http://localhost:8000/docs
 streamlit run streamlit_app.py
 ```
 
-Frontend:
+Frontend URL:
 
 ```text
 http://localhost:8501
@@ -324,7 +324,7 @@ docker-compose up --build
 ```
 
 | Service | URL |
-|---------|------|
+|----------|------|
 | Backend | http://localhost:8000 |
 | Frontend | http://localhost:8501 |
 
@@ -356,16 +356,16 @@ Coverage Includes:
 ## 🎯 API Endpoints
 
 | Method | Endpoint | Description |
-|----------|----------|-------------|
+|----------|-----------|-------------|
 | POST | `/upload` | Upload and process PDF |
 | POST | `/chat` | Ask questions |
 | POST | `/search` | Semantic search |
 | POST | `/chat/reset` | Clear chat history |
 | GET | `/documents` | List documents |
-| GET | `/document/{id}/overview` | Get overview |
+| GET | `/document/{id}/overview` | Get document overview |
 | DELETE | `/document/{id}` | Delete document |
 | DELETE | `/documents/clear-all` | Remove all documents |
-| GET | `/` | Health Check |
+| GET | `/` | Health check |
 
 ---
 
@@ -377,7 +377,7 @@ Coverage Includes:
 
 ### 🪐 DocVerse AI
 
-The story teaches that relying too much on comfort and reacting strongly to small inconveniences can make life harder than they really are. Resilience and adaptability are important life skills.
+The story teaches that resilience and adaptability are more valuable than avoiding every inconvenience.
 
 📚 Sources:
 
@@ -396,7 +396,7 @@ The story teaches that relying too much on comfort and reacting strongly to smal
 2. The Villager and the Spectacles
 3. As You Sow, So Shall You Reap
 4. ...
-5. All stories listed in document order
+5. Remaining stories in document order
 
 ---
 
@@ -407,7 +407,7 @@ The story teaches that relying too much on comfort and reacting strongly to smal
 - [ ] Persistent Chat History
 - [ ] Multi-Document Conversations
 - [ ] Streaming Responses
-- [ ] User Authentication
+- [ ] Authentication System
 - [ ] Cloud Deployment
 - [ ] Multi-User Support
 
@@ -424,7 +424,7 @@ git commit -m "Add new feature"
 git push origin feature/new-feature
 ```
 
-Create a Pull Request and describe your changes.
+Open a Pull Request describing your changes.
 
 ---
 
@@ -436,10 +436,8 @@ Licensed under the **MIT License**.
 
 <div align="center">
 
-## 🌌 Built with Curiosity & Open-Source AI
+### 🌌 Built with Curiosity & Open-Source AI
 
-### ⭐ If this project helped you, consider giving it a Star!
-
-#-docverse-ai
+**⭐ If this project helped you, consider giving it a star!**
 
 </div>
