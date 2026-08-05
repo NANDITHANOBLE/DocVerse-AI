@@ -4,21 +4,17 @@
 
 ### 📄 Upload Documents • 💬 Ask Questions • 🤖 Get AI-Powered Answers
 
-A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI, LangChain, ChromaDB, Groq LLM, and Streamlit**.
+A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI**, **LangChain**, **ChromaDB**, **Groq LLM**, and **Streamlit**.
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&white
-![FastAPI](https://img.shieldsastAPI-009688?style=flat-square&logo=fastapi&logoColor=white
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&te
-![LangChain](https://img.shields.io/badgeG-orange?style=flat-square
-![ChromaDB](https://img.shields.io/badge/ChromaDBrple?style=flat-square
-![Tests](https://img.shields/Tests-24%2F24_Passing-success?style=flat-square
-![License](https://img.shields.io/badge/License-MIT-yellow?style=flat- 🌟 Intelligent Document Conversations with Source Citations
+<br>
 
-#-features •
-#-architecture •
-#-tech-stack •
-#-getting-started •
-#-api-endpoints
+### 🌟 Intelligent Document Conversations with Source Citations
+
+[Features](#-features) •
+[Architecture](#-architecture) •
+[Tech Stack](#-tech-stack) •
+[Getting Started](#-getting-started) •
+[API Endpoints](#-api-endpoints)
 
 </div>
 
