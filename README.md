@@ -151,7 +151,7 @@ DocVerse-AI/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/DocVerse-AI.git
+git clone https://github.com/nandithanoble/DocVerse-AI.git
 cd DocVerse-AI
 ```
 

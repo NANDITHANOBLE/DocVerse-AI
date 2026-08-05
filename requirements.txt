@@ -11,3 +11,5 @@ python-dotenv
 langchain-text-splitters
 streamlit
 requests
+pytest
+httpx
