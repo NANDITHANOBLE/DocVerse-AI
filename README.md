@@ -6,28 +6,29 @@
 
 A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI**, **LangChain**, **ChromaDB**, **Groq LLM**, and **Streamlit**.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&n
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?style=forlogo=fastapi
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontendr-the-badge&logo=streamlit
-![LangChain](https://img.shields.io/badge/LangChain-Rle=for-the-badge
-![Chs://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the 🌟 Intelligent Document Conversations with Source Citations
+<br>
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-logo=python
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688the-badge&logo=fastapi
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4-the-badge&logo=streamlit
+
+![LangChain](https://img.shields.io/badgeG-orange?style=for-the-badge
+![ChromaDB](https://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Tests-24%2F24_Passing-success?style=for-the-bs://img.shields.io/badge/License-MIT-yellow?style=for-the-badge
+
+### 🌟 Intelligent Document Conversations with Source Citations
 
 [Featuress •
-[Architecturee •
-[Techh-stack •
-#-getting-started •
-[APIi-endpoints
+#-architecture •
+#-tech-stack •
+[Gettingg-started •
+[API Endpoints](#-api-endpoints)
 
-</div>
+� Overview
 
----
+**DocVerse AI** is a production-grade RAG application that allows users to upload PDF documents and interact with them through natural conversations.
 
-# 📖 Overview
-
-**DocVerse AI** allows users to upload PDF documents and interact with them through natural language conversations.
-
-Instead of relying only on traditional semantic retrieval, it uses a **hybrid retrieval strategy** combining:
+Unlike traditional RAG systems that rely only on semantic search, DocVerse AI combines:
 
 ✅ Semantic Search (MMR)
 
@@ -37,20 +38,23 @@ Instead of relying only on traditional semantic retrieval, it uses a **hybrid re
 
 ✅ Source Citation Tracking
 
-✅ Conversational Memory
+✅ Session-Based Memory
 
-This enables accurate responses even for complex structural questions such as:
+✅ Persistent Vector Storage
 
-- "How many chapters are there?"
-- "List all sections in order."
-- "What is the last story in the document?"
-- "Summarize Chapter 5."
+This enables accurate responses even for complex questions such as:
+
+- How many chapters are there?
+- List all sections in order.
+- What is the last story in the document?
+- Summarize Chapter 5.
+- Rank all stories as they appear.
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-## 📤 Document Processing
+### 📤 Document Processing
 
 - PDF Upload Support
 - File Validation
@@ -58,36 +62,39 @@ This enables accurate responses even for complex structural questions such as:
 - Duplicate Document Detection
 - Automatic Chunking
 - Metadata Assignment
+- SHA-256 Hash Verification
 
-## 🔍 Intelligent Retrieval
+### 🔍 Intelligent Retrieval
 
-- Semantic Search
-- Hybrid Retrieval
-- Keyword-Based Search
+- Semantic Search (MMR)
+- Keyword Search Fallback
+- Hybrid Retrieval Strategy
 - Structural Query Detection
-- Document Overview Generation
+- Overview-Based Context Injection
 - Persistent ChromaDB Storage
 
-## 💬 AI Chat Experience
+### 💬 AI Chat Experience
 
-- Context-Aware Conversations
-- Multi-turn Question Answering
+- Conversational Question Answering
 - Source Citations
+- Follow-Up Question Support
 - Session Memory
-- Fast Groq LLM Responses
+- Fast Response Generation
+- Context-Aware Retrieval
 
-## 🛠 Engineering Quality
+### 🛠 Engineering Quality
 
-- FastAPI REST APIs
+- FastAPI Backend
 - Streamlit Frontend
 - Docker Support
 - Unit Testing
-- Modular Architecture
 - Error Handling
+- Modular Architecture
+- Production-Ready APIs
 
 ---
 
-# 🏗 Architecture
+## 🏗 Architecture
 
 ```text
                  ┌──────────────┐
@@ -117,9 +124,9 @@ This enables accurate responses even for complex structural questions such as:
           ┌────────────┴────────────┐
           ▼                         ▼
 
-┌─────────────────┐      ┌──────────────────┐
-│ Semantic Search │      │ Keyword Search   │
-└────────┬────────┘      └────────┬─────────┘
+┌─────────────────┐      ┌─────────────────┐
+│ Semantic Search │      │ Keyword Search  │
+└────────┬────────┘      └────────┬────────┘
          └──────────┬─────────────┘
                     ▼
 
@@ -138,39 +145,58 @@ This enables accurate responses even for complex structural questions such as:
           └─────────────────────┘
 ```
 
+<details>
+<summary><b>🔬 Hybrid Retrieval Explained</b></summary>
+
+### Step 1: Semantic Search
+
+Uses embeddings and MMR retrieval to find contextually relevant chunks.
+
+### Step 2: Keyword Search
+
+Searches for exact title and phrase matches.
+
+### Step 3: Merge Results
+
+Combines and removes duplicate chunks.
+
+### Step 4: Structural Query Detection
+
+Questions such as:
+
+- List all chapters
+- How many sections
+- What's the last topic
+- Rank all stories
+
+will automatically include the generated document overview.
+
+### Step 5: Generate Final Answer
+
+Groq LLM receives the retrieved context and produces an answer with citations.
+
+</details>
+
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-## Backend
-
-- FastAPI
-- Python
-- LangChain
-
-## AI & RAG
-
-- Groq LLM
-- ChromaDB
-- Sentence Transformers
-- Retrieval-Augmented Generation
-
-## Frontend
-
-- Streamlit
-
-## Testing
-
-- Pytest
-
-## DevOps
-
-- Docker
-- Docker Compose
+| Layer | Technology |
+|---------|-----------|
+| Backend | FastAPI |
+| Language | Python |
+| Frontend | Streamlit |
+| LLM | Groq (Llama 3.3 70B) |
+| Framework | LangChain |
+| Vector Database | ChromaDB |
+| Embeddings | Sentence Transformers |
+| PDF Processing | PyPDF |
+| Testing | Pytest |
+| Containerization | Docker |
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 DocVerse-AI
@@ -203,73 +229,67 @@ DocVerse-AI
 
 ---
 
-# ⚡ Getting Started
+## ⚡ Getting Started
 
-## Prerequisites
+### Prerequisites
 
 - Python 3.10+
 - Groq API Key
 
-Get your free API key:
+Get a free key:
 
 https://console.groq.com
 
 ---
 
-## 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/NANDITHANOBLE/DocVerse-AI.git
 cd DocVerse-AI
 ```
 
----
+### 2️⃣ Create Virtual Environment
 
-## 2️⃣ Create Virtual Environment
-
-### Windows
+#### Windows
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Linux / Mac
+#### Linux / macOS
 
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
----
-
-## 3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 4️⃣ Configure Environment Variables
+### 4️⃣ Configure Environment Variables
 
 Create a `.env` file:
 
 ```env
-GROQ_API_KEY=your_api_key_here
+GROQ_API_KEY=your_groq_api_key
 ```
 
 ---
 
-# 🚀 Running the Application
+## 🚀 Running the Application
 
-## Start Backend
+### Start Backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Backend URL:
+Backend:
 
 ```text
 http://localhost:8000
@@ -283,30 +303,10 @@ http://localhost:8000/docs
 
 ---
 
-## Start Frontend
+### Start Frontend
 
 ```bash
 streamlit run streamlit_app.py
-```
-
-Frontend URL:
-
-```text
-http://localhost:8501
-```
-
----
-
-# 🐳 Docker Deployment
-
-```bash
-docker-compose up --build
-```
-
-Backend:
-
-```text
-http://localhost:8000
 ```
 
 Frontend:
@@ -317,7 +317,20 @@ http://localhost:8501
 
 ---
 
-# 🧪 Running Tests
+## 🐳 Docker Deployment
+
+```bash
+docker-compose up --build
+```
+
+| Service | URL |
+|---------|------|
+| Backend | http://localhost:8000 |
+| Frontend | http://localhost:8501 |
+
+---
+
+## 🧪 Running Tests
 
 ```bash
 pytest -v
@@ -325,45 +338,46 @@ pytest -v
 
 ### ✅ Current Status
 
-- 24 / 24 Tests Passing
+**24 / 24 Tests Passing**
 
-Covered Areas:
+Coverage Includes:
 
-- API Testing
+- API Endpoints
 - Upload Validation
 - Duplicate Detection
+- PDF Processing
 - Chunking Logic
-- Metadata Generation
+- Metadata Assignment
 - ChromaDB Operations
-- Retrieval Functions
+- Retrieval Workflows
 
 ---
 
-# 🎯 API Endpoints
+## 🎯 API Endpoints
 
-| Method | Endpoint |
-|----------|----------|
-| POST | `/upload` |
-| POST | `/chat` |
-| POST | `/search` |
-| POST | `/chat/reset` |
-| GET | `/documents` |
-| GET | `/document/{id}/overview` |
-| DELETE | `/document/{id}` |
-| DELETE | `/documents/clear-all` |
-| GET | `/` |
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| POST | `/upload` | Upload and process PDF |
+| POST | `/chat` | Ask questions |
+| POST | `/search` | Semantic search |
+| POST | `/chat/reset` | Clear chat history |
+| GET | `/documents` | List documents |
+| GET | `/document/{id}/overview` | Get overview |
+| DELETE | `/document/{id}` | Delete document |
+| DELETE | `/documents/clear-all` | Remove all documents |
+| GET | `/` | Health Check |
 
 ---
 
-# 🎬 Example Interaction
+## 🎬 Example Interaction
 
-### User
+### 👤 User
 
 > What is the moral of The Warm Whale?
 
-### DocVerse AI
+### 🪐 DocVerse AI
 
-The story teaches that relying too much on comfort and reacting strongly to small inconveniences can make life harder than it really is. Resilience and adaptability are important life skills.
+The story teaches that relying too much on comfort and reacting strongly to small inconveniences can make life harder than they really are. Resilience and adaptability are important life skills.
 
 📚 Sources:
 
@@ -372,57 +386,60 @@ The story teaches that relying too much on comfort and reacting strongly to smal
 
 ---
 
-### User
+### 👤 User
 
-> Can you list all stories in order?
+> Can you rank all the stories in order?
 
-### DocVerse AI
+### 🪐 DocVerse AI
 
 1. The Wind and the Sun
 2. The Villager and the Spectacles
 3. As You Sow, So Shall You Reap
 4. ...
-5. Remaining stories in correct order
+5. All stories listed in document order
 
 ---
 
-# 🗺️ Roadmap
+## 🗺️ Roadmap
 
 - [ ] DOCX Support
 - [ ] TXT Support
 - [ ] Persistent Chat History
 - [ ] Multi-Document Conversations
 - [ ] Streaming Responses
-- [ ] Authentication System
+- [ ] User Authentication
 - [ ] Cloud Deployment
-- [ ] Multi-User Workspace
+- [ ] Multi-User Support
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome.
 
 ```bash
 git checkout -b feature/new-feature
+git add .
 git commit -m "Add new feature"
 git push origin feature/new-feature
 ```
 
-Then create a Pull Request.
+Create a Pull Request and describe your changes.
 
 ---
 
-# 📜 License
+## 📜 License
 
-Licensed under the MIT License.
+Licensed under the **MIT License**.
 
 ---
 
 <div align="center">
 
-## 🌌 Built with Curiosity and Open-Source AI
+## 🌌 Built with Curiosity & Open-Source AI
 
-### ⭐ If you found this project useful, consider giving it a star!
+### ⭐ If this project helped you, consider giving it a Star!
+
+#-docverse-ai
 
 </div>
