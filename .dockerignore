@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/uploads/*
+data/chroma_db/*
+!data/uploads/.gitkeep
+!data/chroma_db/.gitkeep
+.git/
+.pytest_cache/
+tests/
+README.md
