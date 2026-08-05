@@ -18,21 +18,6 @@ A production-grade **Retrieval-Augmented Generation (RAG)** application that ena
 
 </div>
 
-<div align="center">
-
-# 🪐 DocVerse AI
-
-### 📄 Upload Documents • 💬 Ask Questions • 🤖 Get AI-Powered Answers
-
-A production-grade **Retrieval-Augmented Generation (RAG)** application that enables intelligent conversations with PDF documents using **FastAPI, LangChain, ChromaDB, Groq LLM, and Streamlit**.
-
-### 🌟 Intelligent Document Conversations with Source Citations
-
-[**Features**](#-features) • [**Architecture**](#-architecture) • [**Tech Stack**](#-tech-stack) • [**Getting Started**](#-getting-started) • [**API Endpoints**](#-api-endpoints)
-
-</div>
-
-
 ---
 
 ## 📖 Overview
